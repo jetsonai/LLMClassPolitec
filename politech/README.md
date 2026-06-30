@@ -31,11 +31,12 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 
 # LangGraph, Streamlit 등 핵심 패키지 설치
+```
 pip install langgraph langchain-core langchain-openai langchain-community langchain-text_splitters chroma4py
 pip install streamlit pillow python-dotenv fastapi 
 pip install langchain-ollama python-multipart
 pip install ultralytics opencv-python faiss-cpu langchain-huggingface sentence-transformers
-
+```
 
 ## 필드 설명
 class SituationAgentState(TypedDict):
