@@ -20,7 +20,7 @@ conda activate ai_agent
 NVIDIA GPU(예: RTX 5070 등) 가속 환경 노트북:
 
 ```python
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu132
 ```
 일반 강의장 및 사무용 노트북 (CPU 전용 환경):
 
