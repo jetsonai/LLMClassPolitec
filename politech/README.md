@@ -22,12 +22,7 @@ LangGraph 파이프라인과 OpenAI GPT-4o Vision 기술을 결합하여, 업로
 
 ```bash
 # 가상환경 활성화 (본인의 환경 이름으로 변경 가능)
-conda activate ml_env
-
-# LangGraph, OpenAI, Streamlit 등 핵심 패키지 설치
-pip install langgraph langchain-core langchain-openai langchain-community langchain-text_splitters chroma4py
-pip install streamlit pillow python-dotenv fastapi 
-pip install langchain-ollama python-multipart
+conda activate ai_agent
 
 ### 2. PyTorch 설치 (노트북 환경별 선택)
 허깅페이스 관련 라이브러리 의존성 해결을 위해 PyTorch 설치가 필수적입니다. 본인의 하드웨어 사양에 맞춰 한 가지만 선택하여 설치하세요.
@@ -43,6 +38,14 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 ```
+
+
+# LangGraph, OpenAI, Streamlit 등 핵심 패키지 설치
+pip install langgraph langchain-core langchain-openai langchain-community langchain-text_splitters chroma4py
+pip install streamlit pillow python-dotenv fastapi 
+pip install langchain-ollama python-multipart
+pip install ultralytics opencv-python faiss-cpu langchain-huggingface sentence-transformers
+
 
 ## 필드 설명
     # 기획안 DB 속성 반영
