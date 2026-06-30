@@ -38,34 +38,21 @@ pip install ultralytics opencv-python faiss-cpu langchain-huggingface sentence-t
 
 
 ## 필드 설명
-    # 기획안 DB 속성 반영
-    id: str                  # 지출 항목 고유 식별자  
-    spent_at: str            # 지출 날짜 
-    merchant: str            # 상점명 또는 사용처 
-    amount: int              # 지출 총 금액 
-    payment_method: str      # 결제수단 
-    category: str            # 소비 카테고리 
-    memo: str                # 사용자 메모 또는 OCR 원문 요약 
-    source: str              # 입력 경로 ('image' 또는 'text') 
-    budget_status: str       # 예산 평가 결과 ('정상' / '주의' / '경고' / '초과') 
-    notion_sync_status: str  # Notion 기록 결과 ('success' / 'failed' / 'skipped') 
+class SituationAgentState(TypedDict):
+    messages: Annotated[list, add_messages]
+    id: str         
+    user_id: str          
+    team_id: str                
+    image_path: str          
+    reg_date: str            
+    items: List[Dict[str, Any]] 
+    detected_item_count: int  
+    memo: str                
+    result_status: str       
+    vision_raw_text: str     
+    annotated_image_base64: str  # [추가] 박스/텍스트가 그려진 이미지
+    final_report: str 
     
-    # 🌟 요구사항에 맞게 변수명 수정 및 신규 필드 추가
-    addr: str                # 상점 주소 (변수명 address -> addr 변경) 
-    tel: str                 # 상점 전화번호 (TELL) 
-    reg_date: str            # 🌟 신규 추가: 등록일시 (REG_DATE) 
-    user_id                  # 노션 링크 매핑 아이디
-    
-
-### 카테고리 분류 RAG 생성
-```sh
-# rag db 생성
-cd backend
-python -m services.rag_build --build
-
-# rag 테스트
-python -m services.rag_build --query "서울역 주차장 주차비 5000"
-```
 
 ### BackEnd 실행 방법
 
@@ -106,6 +93,7 @@ streamlit run app.py
 
 #### user GUI 
 
+<img width="473" height="427" alt="image" src="https://github.com/user-attachments/assets/3e7d80a1-65c3-4f77-97b5-80dff2152d7d" />
 
 
 ### 🌐 브라우저에서 FrontEnd 확인 및 권한 테스트 방법
